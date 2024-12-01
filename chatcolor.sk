@@ -1,0 +1,66 @@
+command /chatcolor <text>:
+	permission: op
+	trigger:
+		if arg-1 is "red":
+			set {chatcolor.%player%} to "&4"
+		if arg-1 is "lightred":
+			set {chatcolor.%player%} to "&c"
+		if arg-1 is "orange":
+			set {chatcolor.%player%} to "<##FF8000>"
+		if arg-1 is "peachorange":
+			set {chatcolor.%player%} to "&6"
+		if arg-1 is "yellow":
+			set {chatcolor.%player%} to "&e"
+		if arg-1 is "green":
+			set {chatcolor.%player%} to "&2"
+		if arg-1 is "lightgreen":
+			set {chatcolor.%player%} to "&a"
+		if arg-1 is "blue":
+			set {chatcolor.%player%} to "&9"
+		if arg-1 is "lightblue":
+			set {chatcolor.%player%} to "&b"
+		if arg-1 is "purple":
+			set {chatcolor.%player%} to "&5"
+		if arg-1 is "pink":
+			set {chatcolor.%player%} to "&d"
+		if arg-1 is "gray":
+			set {chatcolor.%player%} to "&8"
+		if arg-1 is "lightgray":
+			set {chatcolor.%player%} to "&7"
+		if arg-1 is "reset":
+			set {chatcolor.%player%} to "&f"
+		if arg-1 is "redbold":
+			set {chatcolor.%player%} to "&4&l"
+		if arg-1 is "lightredbold":
+			set {chatcolor.%player%} to "&c&l"
+		if arg-1 is "orangebold":
+			set {chatcolor.%player%} to "<##FF8000>&l"
+		if arg-1 is "peachorangebold":
+			set {chatcolor.%player%} to "&6&l"
+		if arg-1 is "yellowbold":
+			set {chatcolor.%player%} to "&e&l"
+		if arg-1 is "greenbold":
+			set {chatcolor.%player%} to "&2&l"
+		if arg-1 is "lightgreenbold":
+			set {chatcolor.%player%} to "&a&l"
+		if arg-1 is "bluebold":
+			set {chatcolor.%player%} to "&9&l"
+		if arg-1 is "lightbluebold":
+			set {chatcolor.%player%} to "&b&l"
+		if arg-1 is "purplebold":
+			set {chatcolor.%player%} to "&5&l"
+		if arg-1 is "pinkbold":
+			set {chatcolor.%player%} to "&d&l"
+		if arg-1 is "graybold":
+			set {chatcolor.%player%} to "&8&l"
+		if arg-1 is "lightgraybold":
+			set {chatcolor.%player%} to "&7&l"
+		if arg-1 is "reset":
+			set {chatcolor.%player%} to "&f"
+
+on join:
+	if {chatcolor.%player%} isn't set:
+		set {chatcolor.%player%} to "&f"
+
+on chat:
+	set chat format to "%player's display name%&f: %{chatcolor.%player%}%%message%"
